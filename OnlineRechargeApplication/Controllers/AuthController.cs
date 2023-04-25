@@ -8,7 +8,7 @@ namespace OnlineRechargeApplication.Controllers
 {
     public class AuthController : Controller
     {
-
+        static bool fromPushPlan = false;
         private readonly OnlineRechargeApplicationContext _context;
 
         public AuthController(OnlineRechargeApplicationContext context)
@@ -127,9 +127,29 @@ namespace OnlineRechargeApplication.Controllers
                 var plans = await _context.PlanModel.Include(x => x.ServiceProvider).Where(m => m.ServiceProvider.ServiceProviderId == customerModel.ServiceProvider.ServiceProviderId).ToListAsync();
                 ViewBag.planModel = plans;
             }
+            if (fromPushPlan)
+            {
+                ViewData["fromPushPlan"] = "true";
+            }
+            else
+            {
+                ViewData["fromPushPlan"] = "false";
+            }
 
             ViewData["email"] = email;
+            ViewData["id"] = customerModel.CustomerId;
             return View();
+        }
+
+        public async Task<ActionResult> PushPlan(int id, int cid, string email)
+        {
+            SelectedPlanModel model = new SelectedPlanModel();
+            model.PlanId = id;
+            model.CustomerId = cid;
+            _context.Add(model);
+            await _context.SaveChangesAsync();
+            fromPushPlan = true;
+            return RedirectToAction("CustomerPage", new { email = email });
         }
     }
 }
