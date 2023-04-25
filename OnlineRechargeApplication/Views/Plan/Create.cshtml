@@ -2,7 +2,11 @@
 
 @{
     ViewData["Title"] = "Create";
+    List<ServiceProviderModel> bag = ViewBag.services;
 }
+
+
+
 
 <h1 class="text-center">Create</h1>
 
@@ -11,42 +15,53 @@
     <div class="row justify-content-center">
         <div class="col-md-6 col-lg-4">
             <div class="form-group shadow-sm rounded border p-3">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="PlanName" class="control-label"></label>
-                <input asp-for="PlanName" class="form-control" />
-                <span asp-validation-for="PlanName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PlanPrice" class="control-label"></label>
-                <input asp-for="PlanPrice" class="form-control" />
-                <span asp-validation-for="PlanPrice" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PlanValidity" class="control-label"></label>
-                <input asp-for="PlanValidity" class="form-control" />
-                <span asp-validation-for="PlanValidity" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PlanDescription" class="control-label"></label>
-                <input asp-for="PlanDescription" class="form-control" />
-                <span asp-validation-for="PlanDescription" class="text-danger"></span>
-            </div>
-            <div class="form-group pt-3">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="PlanName" class="control-label"></label>
+                        <input asp-for="PlanName" name="planname" class="form-control" />
+                        <span asp-validation-for="PlanName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PlanPrice" class="control-label"></label>
+                        <input asp-for="PlanPrice" name="price" class="form-control" />
+                        <span asp-validation-for="PlanPrice" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PlanValidity" class="control-label"></label>
+                        <input asp-for="PlanValidity" name="validity" class="form-control" />
+                        <span asp-validation-for="PlanValidity" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ServiceProvider" class="control-label"></label>
+                        <select  name="service" class="form-control">
+                            @foreach (var item in bag)
+                            {
+                                <option value="@item.ServiceProviderId">@item.ServiceProviderName</option>
+                            }
+                        </select>
+                        <span asp-validation-for="ServiceProvider" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PlanDescription" class="control-label"></label>
+                        <input asp-for="PlanDescription" name="description" class="form-control" />
+                        <span asp-validation-for="PlanDescription" class="text-danger"></span>
+                    </div>
+                    <div class="form-group pt-3">
+                        <input type="submit" value="Create" class="btn btn-primary" />
                         <a class="btn btn-danger" asp-action="Index">Back to List</a>
-            </div>
-        </form>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 
-    
-<div>
-  
-</div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    <div>
+    </div>
+
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }

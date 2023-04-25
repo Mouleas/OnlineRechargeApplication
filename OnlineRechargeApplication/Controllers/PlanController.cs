@@ -46,8 +46,10 @@ namespace OnlineRechargeApplication.Controllers
         }
 
         // GET: Plan/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            List<ServiceProviderModel> service = await _context.ServiceProviderModel.ToListAsync();
+            ViewBag.services = service;
             return View();
         }
 
@@ -56,15 +58,26 @@ namespace OnlineRechargeApplication.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PlanId,PlanName,PlanPrice,PlanValidity,PlanDescription")] PlanModel planModel)
+        public async Task<IActionResult> Create(IFormCollection form)
         {
+            PlanModel plan = new PlanModel();
+            plan.PlanName = ""+form["planname"];
+            plan.PlanPrice = Convert.ToInt32(form["price"]);
+            plan.PlanValidity = Convert.ToInt32(form["validity"]);
+            plan.PlanDescription = ""+(form["description"]);
+
+            int id = Convert.ToInt32(form["service"]);
+
+            var service = await _context.ServiceProviderModel
+                .FirstOrDefaultAsync(m => m.ServiceProviderId == id);
+            plan.ServiceProvider = service;
             if (ModelState.IsValid)
             {
-                _context.Add(planModel);
+                _context.Add(plan);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(planModel);
+            return View(plan);
         }
 
         // GET: Plan/Edit/5
@@ -88,15 +101,15 @@ namespace OnlineRechargeApplication.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PlanId,PlanName,PlanPrice,PlanValidity,PlanDescription")] PlanModel planModel)
+        public async Task<IActionResult> Edit([Bind("PlanId,PlanName,PlanPrice,PlanValidity,PlanDescription")] PlanModel planModel)
         {
+            int id = planModel.PlanId;
             if (id != planModel.PlanId)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
-            {
+           
                 try
                 {
                     _context.Update(planModel);
@@ -114,8 +127,7 @@ namespace OnlineRechargeApplication.Controllers
                     }
                 }
                 return RedirectToAction(nameof(Index));
-            }
-            return View(planModel);
+            
         }
 
         // GET: Plan/Delete/5
@@ -139,8 +151,9 @@ namespace OnlineRechargeApplication.Controllers
         // POST: Plan/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed([Bind("PlanId")] PlanModel planModels)
         {
+            int id = planModels.PlanId;
             if (_context.PlanModel == null)
             {
                 return Problem("Entity set 'OnlineRechargeApplicationContext.PlanModel'  is null.");

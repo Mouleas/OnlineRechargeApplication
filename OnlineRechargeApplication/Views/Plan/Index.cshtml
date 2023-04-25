@@ -65,9 +65,9 @@
                     @Html.DisplayFor(modelItem => item.PlanDescription)
                 </td>
                 <td class="text-center">
-                    <a asp-action="Edit" asp-route-id="@item.PlanId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.PlanId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.PlanId">Delete</a>
+                    <a asp-action="Edit" class="btn btn-primary btn-icon btn-sm" asp-route-id="@item.PlanId"> <i class="fas fa-edit"></i></a> |
+                    <a asp-action="Details" class="btn btn-secondary btn-icon btn-sm" asp-route-id="@item.PlanId"> <i class="fas fa-eye"></i></a> |
+                    <a asp-action="Delete" class="btn btn-danger btn-icon btn-sm" asp-route-id="@item.PlanId"><i class="fas fa-trash"></i></a>
                 </td>
             </tr>
         }
