@@ -23,7 +23,9 @@ namespace OnlineRechargeApplication.Controllers
         public async Task<IActionResult> Index()
         {
               return _context.SelectedPlanModel != null ? 
-                          View(await _context.SelectedPlanModel.ToListAsync()) :
+                          View(await _context.SelectedPlanModel
+                        
+                          .ToListAsync()) :
                           Problem("Entity set 'OnlineRechargeApplicationContext.SelectedPlanModel'  is null.");
         }
 

@@ -4,22 +4,32 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-    <a asp-action="AdminOps" asp-controller="Auth" class="btn btn-warning"> <i class="fas fa-cancel"></i> Back</a>
-</p>
-<table class="table">
-    <thead>
+<style>
+    .text-right {
+        text-align: right;
+    }
+</style>
+<div class="container">
+    <h1 class="text-center">Customer Selected Plans</h1>
+    <div class="text-right">
+        <a asp-action="Create" class="btn btn-success"> <i class="fas fa-plus"></i></a>
+        <a asp-action="AdminOps" asp-controller="Auth" class="btn btn-warning"> <i class="fas fa-cancel"></i> Back</a>
+    </div>
+</div>
+<br />
+<table class="table table-bordered table-striped table-sm">
+    <thead class="table-primary">
         <tr>
-            <th>
+            <th class="text-center">
+
                 @Html.DisplayNameFor(model => model.PlanId)
             </th>
-            <th>
+            <th class="text-center">
+
                 @Html.DisplayNameFor(model => model.CustomerId)
             </th>
-            <th></th>
+            <th class="text-center">Action
+            </th>
         </tr>
     </thead>
     <tbody>

@@ -23,7 +23,9 @@ namespace OnlineRechargeApplication.Controllers
         public async Task<IActionResult> Index()
         {
               return _context.PlanModel != null ? 
-                          View(await _context.PlanModel.ToListAsync()) :
+                          View(await _context.PlanModel
+                          .Include(x => x.ServiceProvider)
+                          .ToListAsync()) :
                           Problem("Entity set 'OnlineRechargeApplicationContext.PlanModel'  is null.");
         }
 
@@ -36,7 +38,7 @@ namespace OnlineRechargeApplication.Controllers
                 return NotFound();
             }
 
-            var planModel = await _context.PlanModel
+            var planModel = await _context.PlanModel.Include(x => x.ServiceProvider)
                 .FirstOrDefaultAsync(m => m.PlanId == id);
             if (planModel == null)
             {
