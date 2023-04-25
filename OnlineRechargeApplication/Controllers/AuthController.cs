@@ -75,15 +75,20 @@ namespace OnlineRechargeApplication.Controllers
             try
             {
                 string email = obj["email"];
-                CustomerModel? model = _context.CustomerModel.SingleOrDefault(user => user.CustomerEmail == email);
-                if (model == null)
+                CustomerModel? customerModel = _context.CustomerModel.SingleOrDefault(user => user.CustomerEmail == email);
+                AdminModel? adminModel = _context.AdminModel.SingleOrDefault(user => user.AdminName == email);
+                if (adminModel != null) 
+                {
+                    return RedirectToAction("AdminOps");
+                }
+                if (customerModel == null)
                 {
                     ViewData["err"] = "*Email not registered";
                     return View();
                 }
                 else
                 {
-                    if (model.CustomerPassword != obj["password"])
+                    if (customerModel.CustomerPassword != obj["password"])
                     {
                         ViewData["err"] = "*Password does not match";
                         return View();
@@ -96,12 +101,21 @@ namespace OnlineRechargeApplication.Controllers
                 return View();
             }
             
-            return View();
+            return RedirectToAction("CustomerPage");
         }
 
         public ActionResult ForgotPassword(IFormCollection obj)
         {
             Console.WriteLine(obj["email"]);
+            return View();
+        }
+
+        public ActionResult AdminOps()
+        {
+            return View();
+        }
+        public ActionResult CustomerOps()
+        {
             return View();
         }
     }
