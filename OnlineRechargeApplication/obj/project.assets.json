@@ -10022,11 +10022,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\Desktop\\OnlineRechargeApplication\\OnlineRechargeApplication\\OnlineRechargeApplication.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Desktop\\New folder\\OnlineRechargeApplication\\OnlineRechargeApplication.csproj",
       "projectName": "OnlineRechargeApplication",
-      "projectPath": "C:\\Users\\HP\\Desktop\\OnlineRechargeApplication\\OnlineRechargeApplication\\OnlineRechargeApplication.csproj",
+      "projectPath": "C:\\Users\\HP\\Desktop\\New folder\\OnlineRechargeApplication\\OnlineRechargeApplication.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\Desktop\\OnlineRechargeApplication\\OnlineRechargeApplication\\obj\\",
+      "outputPath": "C:\\Users\\HP\\Desktop\\New folder\\OnlineRechargeApplication\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",

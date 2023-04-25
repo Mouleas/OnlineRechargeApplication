@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OnlineRechargeApplication.Data;
 
@@ -10,9 +11,10 @@ using OnlineRechargeApplication.Data;
 namespace OnlineRechargeApplication.Migrations
 {
     [DbContext(typeof(OnlineRechargeApplicationContext))]
-    partial class OnlineRechargeApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20230425042955_added custpassword")]
+    partial class addedcustpassword
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
