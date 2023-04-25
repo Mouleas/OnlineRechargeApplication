@@ -1,18 +1,110 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
+a {
+    color: white;
+}
+
+    a:hover {
+        color: darkorange;
+    }
+
+.error-msg {
+    font-weight: bold;
+    color: red;
+}
+
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-moz-keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+.form-container {
+    color: white;
+    margin-top: 100px;
+    margin-left: 270px;
+    padding: 100px 100px 100px 100px;
+    width: 50%;
+    background: linear-gradient(270deg, #d14381, #954dda, #5457ef, #50e4e7);
+    background-size: 800% 800%;
+    -webkit-animation: AnimationName 13s ease infinite;
+    -moz-animation: AnimationName 13s ease infinite;
+    animation: AnimationName 13s ease infinite;
+    text-align: center;
+    border: hidden;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    border-radius: 10px;
+}
+
+    .form-container a {
+        color: white;
+    }
+
+    .form-container .btn2 {
+        margin-left: 20px;
+    }
+
+.box {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    color: white;
+    padding: 30px 50px 10px 50px;
+    background: rgb(63,94,251);
+    background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    margin: auto;
+    width: 60%;
+    border-radius: 10px;
+}
+
+
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }

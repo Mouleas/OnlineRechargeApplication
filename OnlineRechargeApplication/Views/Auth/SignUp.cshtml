@@ -1,0 +1,66 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="border-5 box">
+    <h1>Sign up</h1><br />
+    <form asp-action="SignUp">
+        <div class="row">
+            <div class="form-group col">
+                <label>User name</label>
+                <input type="text" class="form-control" name="name" placeholder="Enter name" required>
+            </div>
+            <div class="form-group col">
+                <label>Email address</label>
+                <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email" required>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="form-group col-2">
+                <label>Ctry code</label>
+                <input type="number" class="form-control" name="countrycode" placeholder="+91" required>
+            </div>
+            <div class="form-group col">
+                <label>Phone number</label>
+                <input type="tel" class="form-control" name="phonenumber" placeholder="12345-67890" required>
+            </div>
+            <div class="form-group col">
+                <label>Service provider</label><br />
+                <select name="serviceprovider" style="width:200px;height:35px;">
+                    <option value="jio">Jio</option>
+                    <option value="airtel">Airtel</option>
+                    <option value="vodofone">Vodofone</option>
+                    <option value="idea">Idea</option>
+                    <option value="bsnl">BSNL</option>
+                </select>
+            </div>
+        </div><br />
+        
+        <div class="form-group col">
+            <label>Billing Address</label>
+            <input type="text" class="form-control" name="address" placeholder="Enter billing address" required>
+        </div><br />
+        
+        <div class="row">
+            <div class="form-group col">
+                <label>Password</label>
+                <input type="password" class="form-control" name="password" placeholder="Enter password" required>
+            </div>
+            <div class="form-group col">
+                <label>Confirm password</label>
+                <input type="password" class="form-control" name="confirmpassword" placeholder="Re-type password" required>
+            </div>
+        </div>
+        <br />
+        @if (""+ViewData["err"] != "")
+        {
+            <p class="error-msg">@(""+ViewData["err"])</p>
+        }
+        <button type="submit" class="btn btn-primary">Submit</button><br /><br />
+        <p>Already a member? <a asp-action="SignIn">Sign in</a></p>
+    </form>
+    
+</div>
