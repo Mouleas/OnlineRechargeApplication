@@ -19,10 +19,11 @@ namespace OnlineRechargeApplication.Controllers
         {
             return View();
         }
-        public ActionResult SignUp() 
+        public async Task<ActionResult> SignUp() 
         {
-
-            return View();
+            return _context.ServiceProviderModel != null ?
+                         View(await _context.ServiceProviderModel.ToListAsync()) :
+                         Problem("Entity set 'OnlineRechargeApplicationContext.ServiceProviderModel'  is null.");
         }
         public ActionResult SignIn() 
         {
@@ -40,9 +41,12 @@ namespace OnlineRechargeApplication.Controllers
                 model.CustomerPhone = obj["phonenumber"];
                 model.CountryCode = obj["countrycode"];
                 model.CustomerAddress = obj["address"];
-                ServiceProviderModel service = new ServiceProviderModel();
-                service.ServiceProviderName = obj["serviceprovider"];
-                model.ServiceProvider = service;
+                int ServiceProviderId = Convert.ToInt32(obj["serviceprovider"]);
+                
+                var Service = await _context.ServiceProviderModel
+                .FirstOrDefaultAsync(m => m.ServiceProviderId == ServiceProviderId);
+
+                model.ServiceProvider = Service;
                 model.CustomerPassword = obj["password"];
                 string confirmPassword = obj["confirmpassword"];
                 if (model.CustomerPassword != confirmPassword)
@@ -92,6 +96,12 @@ namespace OnlineRechargeApplication.Controllers
                 return View();
             }
             
+            return View();
+        }
+
+        public ActionResult ForgotPassword(IFormCollection obj)
+        {
+            Console.WriteLine(obj["email"]);
             return View();
         }
     }

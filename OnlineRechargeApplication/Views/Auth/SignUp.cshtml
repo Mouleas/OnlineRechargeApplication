@@ -3,6 +3,7 @@
 *@
 @{
 }
+@model IEnumerable<OnlineRechargeApplication.Models.ServiceProviderModel>
 
 <div class="border-5 box">
     <h1>Sign up</h1><br />
@@ -30,11 +31,10 @@
             <div class="form-group col">
                 <label>Service provider</label><br />
                 <select name="serviceprovider" style="width:200px;height:35px;">
-                    <option value="jio">Jio</option>
-                    <option value="airtel">Airtel</option>
-                    <option value="vodofone">Vodofone</option>
-                    <option value="idea">Idea</option>
-                    <option value="bsnl">BSNL</option>
+                    @foreach (var type in Model)
+                    {
+                        <option value="@(type.ServiceProviderId)">@(type.ServiceProviderName)</option>
+                    }
                 </select>
             </div>
         </div><br />

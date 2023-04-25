@@ -9,149 +9,153 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = OnlineRechargeApplication
 build_property.RootNamespace = OnlineRechargeApplication
-build_property.ProjectDir = C:\Users\DELL\source\OnlineRechargeApplication\OnlineRechargeApplication\
+build_property.ProjectDir = C:\Users\HP\Desktop\New folder\OnlineRechargeApplication\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\DELL\source\OnlineRechargeApplication\OnlineRechargeApplication
+build_property.MSBuildProjectDirectory = C:\Users\HP\Desktop\New folder\OnlineRechargeApplication
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/Admin/Create.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/Admin/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/Admin/Delete.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/Admin/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/Admin/Details.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/Admin/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/Admin/Edit.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/Admin/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/Admin/Index.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/Auth/Index.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/Auth/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/Auth/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/Auth/SignIn.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/Auth/SignIn.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxTaWduSW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/Auth/SignUp.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/Auth/SignUp.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxTaWduVXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/Customer/Create.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/Customer/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/Customer/Delete.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/Customer/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/Customer/Details.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/Customer/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/Customer/Edit.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/Customer/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/Customer/Index.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/Customer/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/Home/Index.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/Home/Privacy.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/Plan/Create.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/Plan/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhblxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/Plan/Delete.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/Plan/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhblxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/Plan/Details.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/Plan/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhblxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/Plan/Edit.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/Plan/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhblxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/Plan/Index.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/Plan/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhblxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/SelectedPlan/Create.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/SelectedPlan/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VsZWN0ZWRQbGFuXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/SelectedPlan/Delete.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/SelectedPlan/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VsZWN0ZWRQbGFuXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/SelectedPlan/Details.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/SelectedPlan/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VsZWN0ZWRQbGFuXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/SelectedPlan/Edit.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/SelectedPlan/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VsZWN0ZWRQbGFuXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/SelectedPlan/Index.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/SelectedPlan/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VsZWN0ZWRQbGFuXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/ServiceProvider/Create.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/ServiceProvider/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVByb3ZpZGVyXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/ServiceProvider/Delete.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/ServiceProvider/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVByb3ZpZGVyXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/ServiceProvider/Details.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/ServiceProvider/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVByb3ZpZGVyXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/ServiceProvider/Edit.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/ServiceProvider/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVByb3ZpZGVyXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/ServiceProvider/Index.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/ServiceProvider/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVByb3ZpZGVyXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/Shared/Error.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/_ViewImports.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/_ViewStart.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/source/OnlineRechargeApplication/OnlineRechargeApplication/Views/Shared/_Layout.cshtml]
+[C:/Users/HP/Desktop/New folder/OnlineRechargeApplication/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-x252tipayu
