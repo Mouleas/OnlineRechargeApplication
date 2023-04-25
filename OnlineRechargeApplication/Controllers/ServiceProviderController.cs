@@ -88,8 +88,9 @@ namespace OnlineRechargeApplication.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ServiceProviderId,ServiceProviderName")] ServiceProviderModel serviceProviderModel)
+        public async Task<IActionResult> Edit([Bind("ServiceProviderId,ServiceProviderName")] ServiceProviderModel serviceProviderModel)
         {
+            int id = serviceProviderModel.ServiceProviderId;
             if (id != serviceProviderModel.ServiceProviderId)
             {
                 return NotFound();
@@ -139,8 +140,11 @@ namespace OnlineRechargeApplication.Controllers
         // POST: ServiceProvider/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed([Bind("ServiceProviderId")] ServiceProviderModel serviceProviderModels)
         {
+            int id = serviceProviderModels.ServiceProviderId;
+
+
             if (_context.ServiceProviderModel == null)
             {
                 return Problem("Entity set 'OnlineRechargeApplicationContext.ServiceProviderModel'  is null.");

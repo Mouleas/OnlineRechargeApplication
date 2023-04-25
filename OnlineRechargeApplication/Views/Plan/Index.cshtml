@@ -3,51 +3,73 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<h1>Index</h1>
+<style>
+    .text-right {
+        text-align: right;
+    }
+</style>
+<div class="container">
+    <h1 class="text-center">Detailed Plan</h1>
+    <div class="text-right">
+        <a asp-action="Create" class="btn btn-success"> <i class="fas fa-plus"></i></a>
+    </div>
+</div>
 
 <p>
-    <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
+<table class="table table-bordered table-striped table-sm">
+    <thead class="table-primary">
         <tr>
-            <th>
+            <th class="text-center">
+
+                @Html.DisplayNameFor(model => model.PlanId)
+            </th>
+            <th class="text-center">
+
                 @Html.DisplayNameFor(model => model.PlanName)
             </th>
-            <th>
+            <th class="text-center">
+
                 @Html.DisplayNameFor(model => model.PlanPrice)
             </th>
-            <th>
+            <th class="text-center">
+
                 @Html.DisplayNameFor(model => model.PlanValidity)
             </th>
-            <th>
+            <th class="text-center">
+
                 @Html.DisplayNameFor(model => model.PlanDescription)
             </th>
-            <th></th>
+            <th class="text-center">
+                Action
+            </th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlanName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlanPrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlanValidity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlanDescription)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.PlanId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.PlanId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.PlanId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.PlanId)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.PlanName)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.PlanPrice)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.PlanValidity)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.PlanDescription)
+                </td>
+                <td class="text-center">
+                    <a asp-action="Edit" asp-route-id="@item.PlanId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.PlanId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.PlanId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
