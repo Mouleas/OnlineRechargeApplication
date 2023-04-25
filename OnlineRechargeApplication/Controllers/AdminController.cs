@@ -88,8 +88,9 @@ namespace OnlineRechargeApplication.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("AdminId,AdminName,AdminPassword")] AdminModel adminModel)
+        public async Task<IActionResult> Edit([Bind("AdminId,AdminName,AdminPassword")] AdminModel adminModel)
         {
+            int id = adminModel.AdminId;
             if (id != adminModel.AdminId)
             {
                 return NotFound();
@@ -139,8 +140,9 @@ namespace OnlineRechargeApplication.Controllers
         // POST: Admin/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed([Bind("AdminId")] AdminModel adminModels)
         {
+            int id = adminModels.AdminId;
             if (_context.AdminModel == null)
             {
                 return Problem("Entity set 'OnlineRechargeApplicationContext.AdminModel'  is null.");
