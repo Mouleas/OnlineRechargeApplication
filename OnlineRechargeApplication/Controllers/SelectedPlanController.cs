@@ -24,7 +24,8 @@ namespace OnlineRechargeApplication.Controllers
         {
               return _context.SelectedPlanModel != null ? 
                           View(await _context.SelectedPlanModel
-                        
+                          .Include(x => x.plan)
+                          .Include(x => x.customer)
                           .ToListAsync()) :
                           Problem("Entity set 'OnlineRechargeApplicationContext.SelectedPlanModel'  is null.");
         }
@@ -58,7 +59,7 @@ namespace OnlineRechargeApplication.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("SelectedPlanId,PlanId,CustomerId")] SelectedPlanModel selectedPlanModel)
+        public async Task<IActionResult> Create([Bind("SelectedPlanId")] SelectedPlanModel selectedPlanModel)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +91,7 @@ namespace OnlineRechargeApplication.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("SelectedPlanId,PlanId,CustomerId")] SelectedPlanModel selectedPlanModel)
+        public async Task<IActionResult> Edit(int id, [Bind("SelectedPlanId")] SelectedPlanModel selectedPlanModel)
         {
             if (id != selectedPlanModel.SelectedPlanId)
             {

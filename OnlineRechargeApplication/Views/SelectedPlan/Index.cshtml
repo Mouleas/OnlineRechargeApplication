@@ -4,15 +4,15 @@
     ViewData["Title"] = "Index";
 }
 
+
 <style>
     .text-right {
         text-align: right;
     }
 </style>
 <div class="container">
-    <h1 class="text-center">Customer Selected Plans</h1>
+    <h1 class="text-center">Detailed Selected Plan</h1>
     <div class="text-right">
-        <a asp-action="Create" class="btn btn-success"> <i class="fas fa-plus"></i></a>
         <a asp-action="AdminOps" asp-controller="Auth" class="btn btn-warning"> <i class="fas fa-cancel"></i> Back</a>
     </div>
 </div>
@@ -20,32 +20,52 @@
 <table class="table table-bordered table-striped table-sm">
     <thead class="table-primary">
         <tr>
-            <th class="text-center">
+            <th> @Html.DisplayNameFor(model => model.SelectedPlanId)</th>
+            <th> @Html.DisplayNameFor(model => model.plan.PlanName)</th>
+            <th> @Html.DisplayNameFor(model => model.plan.PlanPrice)</th>
+            <th> @Html.DisplayNameFor(model => model.plan.PlanValidity)</th>
+            <th> @Html.DisplayNameFor(model => model.plan.PlanDescription)</th>
+            <th> @Html.DisplayNameFor(model => model.customer.CustomerName)</th>
+            <th> @Html.DisplayNameFor(model => model.customer.CustomerEmail)</th>
+            <th> @Html.DisplayNameFor(model => model.customer.CustomerPassword)</th>
 
-                @Html.DisplayNameFor(model => model.PlanId)
-            </th>
-            <th class="text-center">
 
-                @Html.DisplayNameFor(model => model.CustomerId)
-            </th>
-            <th class="text-center">Action
-            </th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.PlanId)
+                    @Html.DisplayFor(modelItem => item.SelectedPlanId)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CustomerId)
+                <td>
+                    @Html.DisplayFor(modelItem => item.plan.PlanName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.plan.PlanPrice)
+                </td>
+                 <td>
+                    @Html.DisplayFor(modelItem => item.plan.PlanValidity)
             </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.SelectedPlanId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.SelectedPlanId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.SelectedPlanId">Delete</a>
-            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.plan.PlanDescription)
+                </td>
+                 <td>
+                    @Html.DisplayFor(modelItem => item.customer.CustomerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.customer.CustomerEmail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.customer.CustomerPassword)
+                </td>
+                <td class="text-center">
+                    <a asp-action="Edit" class="btn btn-primary btn-icon btn-sm" asp-route-id="@item.SelectedPlanId"> <i class="fas fa-edit"></i></a> |
+                    <a asp-action="Details" class="btn btn-primary btn-icon btn-sm" asp-route-id="@item.SelectedPlanId"> <i class="fas fa-edit"></i></a> |
+                    <a asp-action="Delete" class="btn btn-danger btn-icon btn-sm" asp-route-id="@item.SelectedPlanId"> <i class="fas fa-trash"></i></a>
+                </td>
+           
         </tr>
 }
     </tbody>
