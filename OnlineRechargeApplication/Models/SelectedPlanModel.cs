@@ -7,8 +7,8 @@ namespace OnlineRechargeApplication.Models
         [Key]
         public int SelectedPlanId { get; set; }
 
-        public int PlanId { get; set;}
+        public PlanModel plan { get; set; }
 
-        public int CustomerId { get; set; }
+        public CustomerModel customer { get; set; }
     }
 }
