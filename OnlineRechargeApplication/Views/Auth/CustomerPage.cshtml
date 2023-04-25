@@ -2,46 +2,50 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-}
-@model IEnumerable<MobileRecharge.Models.RechargeModel>
-@{
     ViewData["Title"] = "Plans";
+    List<PlanModel> plans = ViewBag.planModel;
+    string[] colorCodes = new string[5] { "#FFB600", "#44A9CC", "#EB563A", "#F4B998", "#50BCB9" };
+    int idx = 0;
 }
+
+@model IEnumerable<OnlineRechargeApplication.Models.PlanModel>
+
 <h1 class="text-center" style="font-family: Arial, sans-serif; font-size: 2.5rem; color: #333;">Buy Plans</h1>
 <hr />
 <div class="row">
-    @foreach (var item in Model)
+    @foreach (var item in plans)
     {
         <div class="col-md-4 mb-4">
-            <div class="card card-custom">
-                <div class="card-body">
+            <div class="card card-custom" style="background-color:@(colorCodes[(idx++)%5])">
+                <div class="card-body" >
                     <div class="row">
                         <div class="col-sm-4">
-                            <h5 class="card-title">Plan :</h5>
+                            <h5 class="card-title">Plan:</h5>
                         </div>
                         <div class="col-sm-8">
-                            <p class="card-text">@Html.DisplayFor(modelItem => item.PlanName)</p>
+                            <p class="card-text">@item.PlanName</p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-4">
-                            <h5 class="card-title">Price :</h5>
+                            <h5 class="card-title">Price:</h5>
                         </div>
                         <div class="col-sm-8">
-                            <p class="card-text">@Html.DisplayFor(modelItem => item.Price)</p>
+                            <p class="card-text">@item.PlanPrice</p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-4">
-                            <h5 class="card-title">Desc :</h5>
+                            <h5 class="card-title">Desc:</h5>
                         </div>
                         <div class="col-sm-8">
-                            <p class="card-text">@Html.DisplayFor(modelItem => item.Description)</p>
+                            <p class="card-text">@item.PlanDescription</p>
                         </div>
-                    </div>
+                    </div><br />
                     <div class="row">
-                        <div class="col-sm-12 text-center">
-                            <a class="btn btn-outline-primary" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                        <div class="col">
+                            <a class="btn btn-outline-dark" asp-route-id="@item.PlanId" asp-controller="Plan" asp-action="Details">Apply</a>
+                            <a class="btn btn-outline-dark" asp-controller="Plan" asp-action="Details" asp-route-id="@item.PlanId" asp-route-email="@(ViewData["email"])">Details</a>
                         </div>
                     </div>
                 </div>
