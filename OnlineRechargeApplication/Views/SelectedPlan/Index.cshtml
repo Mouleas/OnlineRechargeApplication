@@ -30,7 +30,7 @@
             <th> @Html.DisplayNameFor(model => model.customer.CustomerPassword)</th>
 
 
-            <th>Action</th>
+           
         </tr>
     </thead>
     <tbody>
@@ -60,11 +60,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.customer.CustomerPassword)
                 </td>
-                <td class="text-center">
-                    <a asp-action="Edit" class="btn btn-primary btn-icon btn-sm" asp-route-id="@item.SelectedPlanId"> <i class="fas fa-edit"></i></a> |
-                    <a asp-action="Details" class="btn btn-primary btn-icon btn-sm" asp-route-id="@item.SelectedPlanId"> <i class="fas fa-edit"></i></a> |
-                    <a asp-action="Delete" class="btn btn-danger btn-icon btn-sm" asp-route-id="@item.SelectedPlanId"> <i class="fas fa-trash"></i></a>
-                </td>
+                
            
         </tr>
 }
