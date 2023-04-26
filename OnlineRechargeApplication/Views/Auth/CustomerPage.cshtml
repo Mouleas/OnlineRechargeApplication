@@ -5,21 +5,23 @@
 @{
     ViewData["Title"] = "Plans";
     List<PlanModel> plans = ViewBag.planModel;
+    List<int> selectedPlans = ViewBag.SelectedPlans;
     string[] colorCodes = new string[5] { "#FFB600", "#44A9CC", "#EB563A", "#F4B998", "#50BCB9" };
     int idx = 0;
 }
 
 @model IEnumerable<OnlineRechargeApplication.Models.PlanModel>
 
-<h1 class="text-center" style="font-family: Arial, sans-serif; font-size: 2.5rem; color: #333;">Buy Plans</h1>
+<h1>Welcome, <span style="color:gold">@(ViewData["name"])</span></h1>
 <hr />
+<h1 class="text-center">Buy plans</h1><br />
 <div class="row">
     @foreach (var item in plans)
     {
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 mb-4 card-container">
             <div class="card card-custom" style="background-color:@(colorCodes[(idx++)%5])">
                 <div class="card-body" >
-                    <div class="row">
+                    <div class="row planmodel">
                         <div class="col-sm-4">
                             <h5 class="card-title">Plan:</h5>
                         </div>
@@ -27,26 +29,33 @@
                             <p class="card-text">@item.PlanName</p>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row planmodel">
                         <div class="col-sm-4">
                             <h5 class="card-title">Price:</h5>
                         </div>
                         <div class="col-sm-8">
-                            <p class="card-text">@item.PlanPrice</p>
+                            <p class="card-text">$@item.PlanPrice</p>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row planmodel">
                         <div class="col-sm-4">
                             <h5 class="card-title">Desc:</h5>
                         </div>
                         <div class="col-sm-8">
                             <p class="card-text">@item.PlanDescription</p>
                         </div>
-                    </div><br />
+                    </div><hr />
                     <div class="row">
                         <div class="col">
-                            <a class="btn btn-outline-dark" asp-route-id="@item.PlanId" asp-route-cid="@(ViewData["id"])" asp-route-email="@(ViewData["email"])" asp-action="PushPlan">Apply</a>
-                            <a class="btn btn-outline-dark" asp-controller="Plan" asp-action="Details" asp-route-id="@item.PlanId" asp-route-email="@(ViewData["email"])">Details</a>
+                            @if (selectedPlans.Contains(item.PlanId))
+                            {
+                                <button class="btn btn-dark" disabled>Plan added</button>
+                            }
+                            else
+                            {
+                                <a class="btn btn-outline-dark" asp-route-id="@item.PlanId" asp-route-cid="@(ViewData["id"])" asp-route-email="@(ViewData["email"])" asp-action="PushPlan">Add</a>
+                            }
+                            <a class="btn btn-outline-dark" asp-controller="Plan" asp-action="Details" asp-route-id="@item.PlanId" asp-route-email="@(ViewData["email"])">More details</a>
                         </div>
                     </div>
                 </div>

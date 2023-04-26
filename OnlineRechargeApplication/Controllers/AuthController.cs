@@ -8,7 +8,6 @@ namespace OnlineRechargeApplication.Controllers
 {
     public class AuthController : Controller
     {
-        static bool fromPushPlan = false;
         private readonly OnlineRechargeApplicationContext _context;
 
         public AuthController(OnlineRechargeApplicationContext context)
@@ -127,28 +126,33 @@ namespace OnlineRechargeApplication.Controllers
                 var plans = await _context.PlanModel.Include(x => x.ServiceProvider).Where(m => m.ServiceProvider.ServiceProviderId == customerModel.ServiceProvider.ServiceProviderId).ToListAsync();
                 ViewBag.planModel = plans;
             }
-            if (fromPushPlan)
-            {
-                ViewData["fromPushPlan"] = "true";
-            }
-            else
-            {
-                ViewData["fromPushPlan"] = "false";
-            }
+
+            List<SelectedPlanModel> plansSelected = await _context.SelectedPlanModel.Include(x => x.plan).Include(m => m.customer).Where(n => n.customer.CustomerId == customerModel.CustomerId).ToListAsync();
+
+            List<int> selectedPlans = plansSelected.Select(x => x.plan.PlanId).ToList();
 
             ViewData["email"] = email;
             ViewData["id"] = customerModel.CustomerId;
+            ViewData["name"] = customerModel.CustomerName;
+            ViewBag.SelectedPlans = selectedPlans;
             return View();
         }
 
         public async Task<ActionResult> PushPlan(int id, int cid, string email)
         {
+            var customerModel = await _context.CustomerModel.Include(x => x.ServiceProvider).FirstOrDefaultAsync(m => m.CustomerId == cid);
+            var planModel = await _context.PlanModel.Include(x => x.ServiceProvider).FirstOrDefaultAsync(m => m.PlanId == id);
+
+
             SelectedPlanModel model = new SelectedPlanModel();
-            model.PlanId = id;
-            model.CustomerId = cid;
+
+            model.plan = planModel;
+            model.customer = customerModel;
+            //model.PlanId = id;
+            //model.CustomerId = cid;
             _context.Add(model);
             await _context.SaveChangesAsync();
-            fromPushPlan = true;
+            //fromPushPlan = true;
             return RedirectToAction("CustomerPage", new { email = email });
         }
     }

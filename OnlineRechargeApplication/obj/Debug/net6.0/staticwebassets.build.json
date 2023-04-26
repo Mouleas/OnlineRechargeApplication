@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7yW2zkbdsmrD96+BrL2KyDQcgZFQ9j6i3tpoabXP7Ks=",
+  "Hash": "Sn1xOF/hWyW0tpmsxd6gqOKKahLOpggV6T+jORiB+GU=",
   "Source": "OnlineRechargeApplication",
   "BasePath": "_content/OnlineRechargeApplication",
   "Mode": "Default",
@@ -1596,6 +1596,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\webfonts\\fa-v4compatibility.woff2"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\Desktop\\New folder\\OnlineRechargeApplication\\wwwroot\\lib\\images\\bg.jpg",
+      "SourceId": "OnlineRechargeApplication",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\New folder\\OnlineRechargeApplication\\wwwroot\\",
+      "BasePath": "_content/OnlineRechargeApplication",
+      "RelativePath": "lib/images/bg.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\images\\bg.jpg"
     },
     {
       "Identity": "C:\\Users\\HP\\Desktop\\New folder\\OnlineRechargeApplication\\wwwroot\\lib\\jquery\\dist\\jquery.js",
