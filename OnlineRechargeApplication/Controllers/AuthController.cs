@@ -2,12 +2,12 @@
 using Microsoft.EntityFrameworkCore;
 using OnlineRechargeApplication.Data;
 using OnlineRechargeApplication.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace OnlineRechargeApplication.Controllers
 {
     public class AuthController : Controller
     {
-
         private readonly OnlineRechargeApplicationContext _context;
 
         public AuthController(OnlineRechargeApplicationContext context)
@@ -47,6 +47,7 @@ namespace OnlineRechargeApplication.Controllers
                 .FirstOrDefaultAsync(m => m.ServiceProviderId == ServiceProviderId);
 
                 model.ServiceProvider = Service;
+                Console.WriteLine(model.ServiceProvider.ServiceProviderId);
                 model.CustomerPassword = obj["password"];
                 string confirmPassword = obj["confirmpassword"];
                 if (model.CustomerPassword != confirmPassword)
@@ -93,6 +94,10 @@ namespace OnlineRechargeApplication.Controllers
                         ViewData["err"] = "*Password does not match";
                         return View();
                     }
+                    else
+                    {
+                        return RedirectToAction("CustomerPage", new {email=email} );
+                    }
                 }
             }
             catch (Exception ex)
@@ -100,8 +105,6 @@ namespace OnlineRechargeApplication.Controllers
                 ViewData["err"] = ex.Message;
                 return View();
             }
-            
-            return RedirectToAction("CustomerPage");
         }
 
         public ActionResult ForgotPassword(IFormCollection obj)
@@ -114,9 +117,43 @@ namespace OnlineRechargeApplication.Controllers
         {
             return View();
         }
-        public ActionResult CustomerOps()
+        public async Task<ActionResult> CustomerPage(string email)
         {
+            var customerModel = await _context.CustomerModel.Include(x => x.ServiceProvider).FirstOrDefaultAsync(m => m.CustomerEmail == email);
+
+            if (customerModel != null)
+            {
+                var plans = await _context.PlanModel.Include(x => x.ServiceProvider).Where(m => m.ServiceProvider.ServiceProviderId == customerModel.ServiceProvider.ServiceProviderId).ToListAsync();
+                ViewBag.planModel = plans;
+            }
+
+            List<SelectedPlanModel> plansSelected = await _context.SelectedPlanModel.Include(x => x.plan).Include(m => m.customer).Where(n => n.customer.CustomerId == customerModel.CustomerId).ToListAsync();
+
+            List<int> selectedPlans = plansSelected.Select(x => x.plan.PlanId).ToList();
+
+            ViewData["email"] = email;
+            ViewData["id"] = customerModel.CustomerId;
+            ViewData["name"] = customerModel.CustomerName;
+            ViewBag.SelectedPlans = selectedPlans;
             return View();
+        }
+
+        public async Task<ActionResult> PushPlan(int id, int cid, string email)
+        {
+            var customerModel = await _context.CustomerModel.Include(x => x.ServiceProvider).FirstOrDefaultAsync(m => m.CustomerId == cid);
+            var planModel = await _context.PlanModel.Include(x => x.ServiceProvider).FirstOrDefaultAsync(m => m.PlanId == id);
+
+
+            SelectedPlanModel model = new SelectedPlanModel();
+
+            model.plan = planModel;
+            model.customer = customerModel;
+            //model.PlanId = id;
+            //model.CustomerId = cid;
+            _context.Add(model);
+            await _context.SaveChangesAsync();
+            //fromPushPlan = true;
+            return RedirectToAction("CustomerPage", new { email = email });
         }
     }
 }

@@ -30,8 +30,9 @@ namespace OnlineRechargeApplication.Controllers
         }
 
         // GET: Plan/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int? id, string? email)
         {
+
             if (id == null || _context.PlanModel == null)
             {
                 return NotFound();
@@ -43,7 +44,7 @@ namespace OnlineRechargeApplication.Controllers
             {
                 return NotFound();
             }
-
+            ViewData["email"] = email;
             return View(planModel);
         }
 
