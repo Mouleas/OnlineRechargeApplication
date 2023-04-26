@@ -155,5 +155,40 @@ namespace OnlineRechargeApplication.Controllers
             //fromPushPlan = true;
             return RedirectToAction("CustomerPage", new { email = email });
         }
+
+        [HttpPost]
+        public async Task<ActionResult> Search(string email, IFormCollection obj)
+        {
+            string planname = ""+obj["planname"];
+            int validity = 0, price = 0;
+            Console.WriteLine("VALIDITY: " + obj["validity"]);
+            if (""+obj["validity"] != "")
+            {
+                validity = Convert.ToInt32((""+obj["validity"]));
+            }
+            if ("" + obj["price"] != "")
+            {
+                price = Convert.ToInt32(""+obj["price"]);
+            } 
+            var customerModel = await _context.CustomerModel.Include(x => x.ServiceProvider).FirstOrDefaultAsync(m => m.CustomerEmail == email);
+
+            if (customerModel != null)
+            {
+                var plans = await _context.PlanModel.Include(x => x.ServiceProvider).Where(m => m.ServiceProvider.ServiceProviderId == customerModel.ServiceProvider.ServiceProviderId && m.PlanName.Contains(planname) && (m.PlanPrice >= price) && (m.PlanValidity >= validity)).ToListAsync();
+                ViewBag.planModel = plans;
+            }
+
+            List<SelectedPlanModel> plansSelected = await _context.SelectedPlanModel.Include(x => x.plan).Include(m => m.customer).Where(n => n.customer.CustomerId == customerModel.CustomerId).ToListAsync();
+
+            List<int> selectedPlans = plansSelected.Select(x => x.plan.PlanId).ToList();
+
+            ViewData["email"] = email;
+            ViewData["id"] = customerModel.CustomerId;
+            ViewData["name"] = customerModel.CustomerName;
+            ViewBag.SelectedPlans = selectedPlans;
+
+            return View();
+        }
+        
     }
 }
